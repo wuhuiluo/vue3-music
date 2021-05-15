@@ -1,3 +1,5 @@
+const registerRouter = require('./backend/router')
+
 module.exports = {
   lintOnSave: false,
   css: {
@@ -9,6 +11,11 @@ module.exports = {
             @import "@/assets/scss/mixin.scss";
           `
       }
+    }
+  },
+  devServer: {
+    before(app) {
+      registerRouter(app)
     }
   }
 }

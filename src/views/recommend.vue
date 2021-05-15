@@ -1,10 +1,17 @@
 <template>
-  <div class="search">search</div>
+  <div class="search"></div>
 </template>
 
 
 <script>
-export default {};
+import { getRecommend } from "../api/recommend";
+export default {
+  name: "recommend",
+  async created() {
+    const data = await getRecommend();
+    console.log(data);
+  },
+};
 </script>
 
 
